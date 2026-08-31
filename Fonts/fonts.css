@@ -1,17 +1,7 @@
 @font-face {
-  font-family: Inter;
-  src: url(./Inter-VariableFont.woff) format('woff');
+  font-family: 'Inter Variable';
   src: url(./Inter-VariableFont.woff2) format('woff2');
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 100 900;
   font-display: swap;
-}
-
-@font-face {
-  font-family: Inter;
-  src: url(./Inter-VariableFont.woff) format('woff');
-  src: url(./Inter-VariableFont.woff2) format('woff2');
-  font-weight: 700;
   font-style: normal;
-  font-display: swap;
 }

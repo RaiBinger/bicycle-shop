@@ -1,14 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./Fonts/fonts.css">
-  <link rel="stylesheet" href="./Styles/global.css">
-  <link rel="stylesheet" href="./Styles/styles.css">
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Fonts/fonts.css" />
+    <link rel="stylesheet" href="./Styles/global.css" />
+    <link rel="stylesheet" href="./Styles/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        class="header__brand-logo"
+        src="./Images/header__brand.svg"
+        alt="Логотип магазина велосипедов"
+      />
+      <div class="header__cart">
+        <img
+          class="header__cart-image"
+          src="./Images/Cart/trigger.svg"
+          alt="Корзина товаров клиента"
+        />
+        <img
+          class="header__cart-indicator"
+          src="./Images/Cart/Rectangle 7.svg"
+          alt="Индикатор заполенной корзины"
+        />
+      </div>
+    </header>
+    <main>
+      <section class="cover">
+        <div class="overlay"></div>
+        <div class="cover__header">
+          <h1 class="cover__title">
+            <span>Новый</span>
+            <span>Сезон</span>
+            <span>Катания</span>
+          </h1>
+          <h2 class="cover__subtitle">Велосипеды для гор, троп и города</h2>
+        </div>
+        <button class="cover__button">Смотреть каталог</button>
+      </section>
+      <section class="product">
+        <div class="product__description">
+          <h2 class="product__title">Горные велосипеды</h2>
+          <p class="product__content-description">
+            Здесь собраны модели для бездорожья, лесных троп, горных подъемов и
+            скоростных спусков. В нашем каталоге — надежные байки для новичков,
+            любителей активного отдыха и опытных райдеров. Подберите идеальный
+            MTB под свой стиль катания и бюджет — от классических хардтейлов до
+            высокотехнологичных двухподвесов.
+          </p>
+        </div>
+        <div class="product__storefront">
+          <div class="product__card">
+            <div class="product__card-image-wrapper">
+              <img
+                class="product__card-image"
+                src="./Images/bicycle.jpg"
+                alt="Ретро велосипед с корзинкой у стены"
+              />
+              <div class="overlay"></div>
+            </div>
+            <div class="product__content-aside">
+              <div class="product__descr-content">
+                <h3 class="product__card-title">
+                  <a href="#0">Велосипед Bicycle 1245</a>
+                </h3>
+                <p class="product__card-description">
+                  Покоряй бездорожье уверенно. Надежный хардтейл для активного
+                  отдыха и первых соревнований.
+                </p>
+                <span class="product__card-price">
+                  <span class="product__card-price-old">22 999 руб</span>
+                  <span class="product__card-price-current">12 999 руб</span>
+                </span>
+              </div>
+              <div class="product__card-footer">
+                <button class="product__card-buy-button">Купить</button>
+                <div class="product__card-interactiv">
+                  <input
+                    type="checkbox"
+                    id="product__card-wishlist"
+                    class="product__card-checkbox"
+                  />
+                  <label
+                    for="product__card-wishlist"
+                    class="product__card-wishlist-lable"
+                    >В избранное</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>

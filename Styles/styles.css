@@ -1,0 +1,208 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 20px 190px 0;
+  padding-block: 20px;
+}
+
+.header__cart {
+  position: relative;
+  width: 46px;
+  height: 48px;
+  justify-self: end;
+}
+
+.header__cart-indicator {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  right: 0;
+}
+
+.cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 60px 190px 0;
+  padding: 36px 40px;
+  background-image: url(../Images/bicycle-3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 320px;
+  border-radius: 20px;
+  gap: 14px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.55);
+  border-radius: 20px;
+}
+
+.cover__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1;
+}
+
+.cover__title {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.083;
+}
+
+.cover__subtitle {
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.85);
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+
+.cover__button {
+  align-self: flex-end;
+  padding: 16px 32px;
+  z-index: 1;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  margin: 90px 190px 0;
+  gap: 40px;
+}
+
+.product__description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product__title {
+  font-size: 24px;
+  line-height: 1.2083;
+  font-weight: 700;
+}
+
+.product__content-description {
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+.product__storefront {
+  display: grid;
+  grid-template-columns: repeat(2, ifr);
+  grid-template-rows: auto;
+}
+
+.product__card {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  min-height: 224px;
+  width: 520px;
+}
+
+.product__card-image-wrapper {
+  position: relative;
+}
+
+.product__card-image {
+  width: 200px;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.product__content-aside {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  padding: 10px 20px;
+  align-content: space-between;
+}
+
+.product__descr-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  row-gap: 10px;
+}
+
+.product__card-title {
+  grid-column: 1 / -1;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.product__card-description {
+  grid-column: 1 / -1;
+  font-size: 14px;
+  line-height: 1.571;
+}
+
+.product__card-price {
+  font-family: 'Inter Variable', serif, sans-serif;
+  grid-column: 1 / -1;
+}
+
+.product__card-price-current {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.product__card-price-old {
+  text-decoration: line-through;
+  /* visibility: hidden; */
+}
+
+.product__card-footer {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-column: 1 / -1;
+  column-gap: 18px;
+}
+
+.product__card-buy-button {
+  justify-self: start;
+  align-self: center;
+  padding: 12px 31px;
+  border-radius: 20px;
+  background-color: rgb(96 193 61);
+  border: 0;
+  font-size: 16px;
+  color: white
+}
+
+.product__card-interactiv {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.product__card-checkbox {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgb(96 193 61);
+  border-radius: 10px;
+}
+
+.product__card-wishlist-lable {
+  font-size: 16px;
+  font-family: 'Inter Variable', serif, sans-serif;
+}
