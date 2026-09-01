@@ -7,87 +7,87 @@
 
 .header__cart {
   position: relative;
+  justify-self: end;
   width: 44px;
   height: 48px;
-  justify-self: end;
   padding-top: 8px;
 }
 
 .header__cart-indicator {
   position: absolute;
-  width: 10px;
-  height: 10px;
   top: 8;
   right: 0;
+  width: 10px;
+  height: 10px;
 }
 
 .cover {
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 14px;
+  min-height: 320px;
   margin: 60px 190px 0;
+  border-radius: 20px;
   padding: 36px 40px;
   background-image: url(../Images/bicycle-3.jpg);
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  min-height: 320px;
-  border-radius: 20px;
-  gap: 14px;
+  background-position: center;
+  background-size: cover;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgb(0 0 0 / 0.55);
   border-radius: 20px;
+  background-color: rgb(0 0 0 / 0.55);
 }
 
 .cover__header {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  z-index: 1;
 }
 
 .cover__title {
   display: flex;
   flex-direction: column;
   color: white;
-  text-transform: uppercase;
-  font-size: 48px;
   font-weight: 700;
+  font-size: 48px;
   line-height: 1.083;
   letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .cover__subtitle {
-  text-transform: uppercase;
   color: rgb(255 255 255 / 0.85);
+  font-weight: 400;
   font-size: 14px;
   letter-spacing: 1.3px;
-  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .cover__button {
-  align-self: flex-end;
-  padding: 16px 32px;
   z-index: 1;
-  border-radius: 6px;
-  background-color: transparent;
+  align-self: flex-end;
   border: 1px solid white;
+  border-radius: 6px;
+  padding: 16px 32px;
   color: white;
-  text-transform: uppercase;
+  font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.5px;
-  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
 }
 
 .product {
   display: flex;
   flex-direction: column;
-  margin: 90px 190px 0;
   gap: 38px;
+  margin: 90px 190px 0;
 }
 
 .product__description {
@@ -97,9 +97,9 @@
 }
 
 .product__title {
+  font-weight: 700;
   font-size: 24px;
   line-height: 1.2083;
-  font-weight: 700;
 }
 
 .product__content-description {
@@ -118,8 +118,8 @@
   position: relative; /* Позицианируем относительно всю карточку товара, чтобы выделить гранисы, до которых нужно растянуть ссылку, чтобы вся карточка была ссылкой */
   display: grid;
   grid-template-columns: min-content 1fr;
-  min-height: 224px;
   width: 520px;
+  min-height: 224px;
 }
 
 .product__card-image-wrapper {
@@ -142,15 +142,15 @@
 .product__card-image {
   width: 200px;
   height: 100%;
-  object-position: center;
   object-fit: cover;
+  object-position: center;
 }
 
 .product__content-aside {
   display: grid;
   grid-template-rows: repeat(2, min-content);
-  padding: 10px 20px;
   align-content: space-between;
+  padding: 10px 20px;
 }
 
 .product__descr-content {
@@ -163,8 +163,8 @@
 
 .product__card-title {
   grid-column: 1 / -1;
-  font-size: 18px;
   font-weight: 700;
+  font-size: 18px;
 }
 
 /* Используем для ссылки псевдо-элемент и позицианируем абсолютно чтобы растянуть область ссылки на всего родителя */
@@ -183,13 +183,13 @@
 }
 
 .product__card-price {
-  font-family: 'Inter Variable', serif, sans-serif;
   grid-column: 1 / -1;
+  font-family: 'Inter Variable', serif, sans-serif;
 }
 
 .product__card-price-current {
-  font-size: 16px;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .product__card-price-old {
@@ -199,54 +199,54 @@
 
 .product__card-footer {
   position: relative; /* Позицианируем относительно родителя интерактивных элементов */
+  z-index: 2; /* Поднимаем кнопку и чек-бокс над карточкой, чтобы оставались кликабельными */
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-column: 1 / -1;
   column-gap: 18px;
-  z-index: 2; /* Поднимаем кнопку и чек-бокс над карточкой, чтобы оставались кликабельными */
 }
 
 .product__card-buy-button {
   justify-self: start;
   align-self: center;
-  padding: 12px 31px;
-  border-radius: 20px;
-  background-color: rgb(96 193 61);
   border: 0;
-  font-size: 16px;
+  border-radius: 20px;
+  padding: 12px 31px;
   color: white;
+  font-size: 16px;
   letter-spacing: 0.8px;
+  background-color: rgb(96 193 61);
 }
 
 .product__card-interactiv {
+  visibility: hidden; /* Полностью скрываем чек-бокс. Подготавливаем для появления его при наведении мышкой */
   display: flex;
   align-items: center;
   gap: 7px;
   opacity: 0; /* Делаем чек-бокс прозрачным. Подготавливаем для появления его при наведении мышкой */
-  visibility: hidden; /* Полностью скрываем чек-бокс. Подготавливаем для появления его при наведении мышкой */
   transition: opacity 0.3s ease, visibility 0.3s ease; /* Типа анимация появления */
 }
 
 .product__card:hover .product__card-interactiv {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 
 .product__card-checkbox {
-  appearance: none;
   width: 30px;
   height: 30px;
   border: 2px solid rgb(96 193 61);
   border-radius: 10px;
+  appearance: none;
 }
 
 .product__card-wishlist-lable {
-  font-size: 16px;
   font-family: 'Inter Variable', serif, sans-serif;
+  font-size: 16px;
 }
 
 .footer__copyright {
-  font-size: 16px;
   margin: 60px 0 40px;
+  font-size: 16px;
   text-align: center;
 }
