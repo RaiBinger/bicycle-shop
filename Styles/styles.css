@@ -7,16 +7,17 @@
 
 .header__cart {
   position: relative;
-  width: 46px;
+  width: 44px;
   height: 48px;
   justify-self: end;
+  padding-top: 8px;
 }
 
 .header__cart-indicator {
   position: absolute;
   width: 10px;
   height: 10px;
-  top: 0;
+  top: 8;
   right: 0;
 }
 
@@ -57,13 +58,14 @@
   font-size: 48px;
   font-weight: 700;
   line-height: 1.083;
+  letter-spacing: 1.5px;
 }
 
 .cover__subtitle {
   text-transform: uppercase;
   color: rgb(255 255 255 / 0.85);
   font-size: 14px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.3px;
   font-weight: 400;
 }
 
@@ -85,7 +87,7 @@
   display: flex;
   flex-direction: column;
   margin: 90px 190px 0;
-  gap: 40px;
+  gap: 38px;
 }
 
 .product__description {
@@ -107,11 +109,13 @@
 
 .product__storefront {
   display: grid;
-  grid-template-columns: repeat(2, ifr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  gap: 20px;
 }
 
 .product__card {
+  position: relative; /* Позицианируем относительно всю карточку товара, чтобы выделить гранисы, до которых нужно растянуть ссылку, чтобы вся карточка была ссылкой */
   display: grid;
   grid-template-columns: min-content 1fr;
   min-height: 224px;
@@ -120,6 +124,19 @@
 
 .product__card-image-wrapper {
   position: relative;
+}
+
+.product__card-image-overlay {
+  border-radius: 0;
+  opacity: 0; /* Сначала полностью обесцвечиваем оверлей и подготавливаем его для того, чтобы сделать появление его при наведении мышкой */
+  transition: opacity 0.3s ease; /* Типа анимации проявления оверлея над картинкой */
+  pointer-events: none; /* Делаем так, чтобы оверлей не мешал кликам мышкой по карточке */
+}
+
+/* Делаем затемнение картинки товара оверлеем при наведении на карточку мышкой */
+
+.product__card:hover .product__card-image-overlay {
+  opacity: 1;
 }
 
 .product__card-image {
@@ -141,12 +158,22 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, min-content);
   row-gap: 10px;
+  padding-bottom: 13px;
 }
 
 .product__card-title {
   grid-column: 1 / -1;
   font-size: 18px;
   font-weight: 700;
+}
+
+/* Используем для ссылки псевдо-элемент и позицианируем абсолютно чтобы растянуть область ссылки на всего родителя */
+
+.product__card-title-link::after {
+  content: ""; /* Почитать что это такое и как это работает */
+  position: absolute; /* Абсолютное позиционирование, чтобы ссылка растянулась на всю область карточки */
+  inset: 0;
+  z-index: 1; /* Поднимаем всю область псевдо-элемента над карточкой товара */
 }
 
 .product__card-description {
@@ -166,15 +193,17 @@
 }
 
 .product__card-price-old {
+  padding-right: 4px;
   text-decoration: line-through;
-  /* visibility: hidden; */
 }
 
 .product__card-footer {
+  position: relative; /* Позицианируем относительно родителя интерактивных элементов */
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-column: 1 / -1;
   column-gap: 18px;
+  z-index: 2; /* Поднимаем кнопку и чек-бокс над карточкой, чтобы оставались кликабельными */
 }
 
 .product__card-buy-button {
@@ -185,13 +214,22 @@
   background-color: rgb(96 193 61);
   border: 0;
   font-size: 16px;
-  color: white
+  color: white;
+  letter-spacing: 0.8px;
 }
 
 .product__card-interactiv {
   display: flex;
   align-items: center;
   gap: 7px;
+  opacity: 0; /* Делаем чек-бокс прозрачным. Подготавливаем для появления его при наведении мышкой */
+  visibility: hidden; /* Полностью скрываем чек-бокс. Подготавливаем для появления его при наведении мышкой */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Типа анимация появления */
+}
+
+.product__card:hover .product__card-interactiv {
+  opacity: 1;
+  visibility: visible;
 }
 
 .product__card-checkbox {
@@ -205,4 +243,10 @@
 .product__card-wishlist-lable {
   font-size: 16px;
   font-family: 'Inter Variable', serif, sans-serif;
+}
+
+.footer__copyright {
+  font-size: 16px;
+  margin: 60px 0 40px;
+  text-align: center;
 }
